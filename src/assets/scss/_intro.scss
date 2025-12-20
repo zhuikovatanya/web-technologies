@@ -1,0 +1,46 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0;
+    min-height: calc(100vh - 100px);
+
+    .images {
+        position: absolute;
+        top: -100px;
+        right: -80px;
+        bottom: 0;
+        width: 65%;
+        height: 1960px;
+        display: flex;
+        justify-content: space-between;
+        z-index: 0;
+        transform: rotate(-15deg);
+        transform-origin: top right;
+        pointer-events: none;
+    }
+
+    .image-container-first,
+    .image-container-second {
+        position: absolute;
+        top: 0;
+        width: 65%; 
+        height: 100%;
+        background-repeat: repeat-y;
+        background-size: contain;
+        background-position: top center;
+    }
+
+    .image-container-first {
+        left: 0;
+        background-image: url('../img/главная1.webp');
+        animation: bg-animation-backward 17s linear infinite;
+    }
+
+    .image-container-second {
+        right: 0;
+        background-image: url('../img/главная2.webp');
+        animation: bg-animation-forward 17s linear infinite;
+    }
+}

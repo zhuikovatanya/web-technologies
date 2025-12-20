@@ -1,0 +1,17 @@
+@keyframes bg-animation-forward {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes bg-animation-backward {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
