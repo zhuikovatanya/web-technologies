@@ -1,0 +1,62 @@
+.stages {
+    background-color: $white;
+    padding: $spacing-lg 108px;
+
+    &-title {
+        font-size: 36px;
+        font-weight: 700;
+        margin: 0 0 40px 0;
+    }
+
+    &-columns {
+        display: grid;
+        grid-template-columns: 350px 1fr 380px; 
+        gap: 0 0; 
+    }
+
+    &-item {
+        background-color: $white;
+        padding: $spacing-md;
+        border-radius: $border-radius;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 0 0 24px rgba(0, 0, 0, 0.16);
+        margin-bottom: 32px; 
+
+        &:nth-child(odd) {
+            grid-column: 1;
+        }
+
+        &:nth-child(even) {
+            grid-column: 3;
+        }
+
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        grid-template-rows: auto 1fr;
+        gap: 16px;
+        align-items: start;
+
+        img {
+            width: 48px;
+            height: 48px;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+            padding-top: 4px;
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.33;
+            margin: 0;
+            grid-column: 1 / -1;
+            grid-row: 2;
+        }
+    }
+}

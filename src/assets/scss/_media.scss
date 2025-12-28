@@ -1,44 +1,49 @@
-@media screen and (max-width: $tablet) {
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    html {
-        overflow-x: hidden;
+@media screen and (min-width: $tablet) {
+    .container {
+        padding: 0 20px;
     }
 
     .header {
-        margin-left: auto;
-        margin-right: auto;
-        width: calc(100% - 40px);
-        padding: 18px 24px;
-        height: 60px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-sizing: border-box;
-        position: relative;
+        left: 20px;
+        right: 20px;
+
+        .container {
+            padding: 18px 24px;
+        }
     }
 
     .logo {
         font-size: 19px;
-        font-weight: 700;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 5;
+        position: static;
+        transform: none;
+    }
+
+    .menu-icon {
+        display: none;
     }
 
     .nav {
         display: none;
+
+        &-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        &-item a {
+            color: $text-dark;
+            font-size: 14px;
+            text-decoration: none;
+        }
     }
 
     .contacts {
-        order: 1;
         display: flex;
-        flex-direction: row;
-        gap: 0;
+        gap: 16px;
+        font-size: 14px;
         margin-left: auto;
 
         &-phone {
@@ -47,8 +52,8 @@
 
         &-email {
             display: flex;
-            gap: 4px;
             align-items: center;
+            gap: 7px;
         }
 
         &-icon {
@@ -58,6 +63,9 @@
 
         &-info {
             font-size: 12px;
+            margin: 0;
+            color: $primary-color;
+            margin-right: 7px;
         }
     }
 
@@ -66,9 +74,7 @@
         max-width: 420px;
         margin-left: 20px;
         margin-right: 0;
-        margin-top: 20px;
-        height: auto;
-        box-sizing: border-box;
+        margin-top: 100px;
 
         &-title {
             font-size: 28px;
@@ -76,7 +82,6 @@
 
         &-text {
             font-size: 16px;
-            line-height: 1.5;
         }
     }
 
@@ -84,12 +89,8 @@
         width: 50%;
         max-width: 420px;
         margin-left: 20px;
-        margin-right: 0;
         margin-top: 20px;
-        margin-bottom: 40px;
-        height: auto;
         padding: 20px 20px 20px 32px;
-        box-sizing: border-box;
 
         &-title {
             font-size: 18px;
@@ -107,8 +108,6 @@
         &-button {
             width: 50%;
             text-align: center;
-            height: 48px;
-            box-sizing: border-box;
         }
     }
 
@@ -116,7 +115,6 @@
         padding: 30px 20px;
         flex-direction: row;
         gap: 30px;
-        box-sizing: border-box;
         align-items: flex-start;
 
         &-content {
@@ -138,14 +136,6 @@
             margin-top: 120px;
         }
 
-        &-text {
-            width: 80%;
-
-            br {
-                display: none;
-            }
-        }
-
         &-items {
             transform: translateX(0);
             padding-left: 0;
@@ -153,356 +143,344 @@
 
             a {
                 font-size: 18px;
-                flex: 1;
             }
         }
     }
 
     .projects {
         padding: 30px 20px;
-        box-sizing: border-box;
 
         &-title {
             font-size: 28px;
         }
 
         &-columns {
-            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
-        }
-    }
-
-    .footer {
-        margin-left: 20px;
-        margin-right: 20px;
-        padding: 20px;
-        box-sizing: border-box;
-
-        &-logo {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        &-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 24px;
         }
 
         &-item {
-            position: relative;
-            padding-left: 32px;
-            padding-top: 4px;
-
-            img {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 20px;
-                height: 20px;
-                filter: brightness(0) invert(1) opacity(0.6);
-            }
-        }
-
-        &-label {
-            font-size: 11px;
-            color: $text-light;
-            margin: 0 0 6px 0;
-        }
-
-        &-text {
-            font-size: 13px;
-            color: $white;
-            margin-top: 12px;
-            margin-left: -32px;
-        }
-
-        &-bottom {
-            display: flex;
-            justify-content: center;
+            flex-direction: row;
             align-items: center;
-            gap: 10px;
-            margin-top: 16px;
+            gap: 12px;
 
             img {
-                width: 20px;
-                height: 20px;
-                position: relative;
-                top: -1px;
+                width: 40px;
+                height: 40px;
             }
 
             p {
-                font-size: 13px;
-                color: $white;
-                margin: 0;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: $mobile) {
-    body {
-        width: 100%;
-        overflow-x: hidden;
-    }
-
-    html {
-        overflow-x: hidden;
-    }
-
-    .header {
-        margin-left: auto;
-        margin-right: auto;
-        width: calc(100% - 32px);
-        padding: 10px 12px;
-        box-sizing: border-box;
-    }
-
-    .logo {
-        font-size: 16px;
-    }
-
-    .menu-icon {
-        display: block;
-        order: -1;
-    }
-
-    .contacts {
-        display: none;
-    }
-
-    .mobile-menu {
-        &-wrapper {
-            padding: 20px 30px;
-            box-sizing: border-box;
-        }
-
-        &-logo {
-            width: 200px;
-        }
-
-        &-nav a {
-            font-size: 24px;
-        }
-
-        &-contacts {
-            flex-direction: column;
-            align-items: center;
-
-            a {
                 font-size: 14px;
             }
         }
     }
 
+    .footer {
+        .container {
+            max-width: 900px;
+            padding: 24px;
+        }
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        padding-left: 0;
+    }
+
+    .footer-item {
+        padding-left: 32px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .footer-label {
+        font-size: 11px;
+    }
+
+    .footer-text {
+        font-size: 13px;
+        margin-left: -32px;
+    }
+
+    .footer-bottom {
+        gap: 10px;
+        margin-top: 16px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        max-width: 1124px;
+        padding: 0;
+    }
+
+    .header {
+        margin-left: 108px; 
+        width: 1224px;      
+        left: auto;         
+        right: auto;
+
+        .container {
+            padding: 16px 24px;
+            height: 56px;
+        }
+    }
+
+    .logo {
+        font-size: 20px;
+        position: static;
+        transform: none;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+        flex: 1;
+        margin-left: 40px;
+
+        &-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        &-item a {
+            color: $text-dark;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    }
+
+    .contacts {
+        display: flex;
+        gap: 32px;
+        font-size: 14px;
+
+        &-phone,
+        &-email {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        &-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        &-info {
+            margin: 0;
+            color: $primary-color;
+            margin-right: 7px;
+            font-size: 14px;
+        }
+    }
+
     .main-info {
-        width: calc(100% - 32px);
-        margin-left: 16px;
-        margin-right: 16px;
-        margin-top: 20px;
-        box-sizing: border-box;
+        width: 600px;
+        max-width: none;
+        margin-top: 120px;
+        margin-left: 106px;
 
         &-title {
-            font-size: 27px;
-            line-height: 1.3;
+            font-size: 36px;
+            line-height: 1.2;
         }
 
         &-text {
             font-size: 15px;
-            line-height: 1.5;
+            line-height: 20px;
         }
     }
 
     .feedback-form {
-        width: calc(100% - 64px);
-        margin-left: 16px;
-        margin-right: 16px;
-        margin-top: 32px;
-        margin-bottom: 40px;
-        padding: 16px 16px 16px 24px;
-        box-sizing: border-box;
+        width: 676px;
+        max-width: none;
+        height: auto;
+        margin: 48px auto 64px 108px;
+        padding: 24px;
 
         &-title {
-            font-size: 17px;
-            line-height: 1.4;
+            font-size: 20px;
+            margin-bottom: 24px;
 
             br {
-                display: none;
+                display: block;
             }
         }
     }
 
     .form {
-        gap: 12px;
+        flex-direction: row;
+        gap: 20px;
 
         &-label {
-            font-size: 12px;
+            font-size: 13px;
         }
 
         input[type="tel"],
         input[type="text"],
         input[type="email"] {
-            font-size: 13px;
-            box-sizing: border-box;
+            font-size: 14px;
         }
 
         &-button {
-            font-size: 13px;
-            height: 48px;
-            padding: 10px 16px;
-            box-sizing: border-box;
+            width: 132px;
+            height: 58px;
+            font-size: 14px;
+            padding: 11px 24px;
+            text-align: left;
         }
     }
 
     .services {
-        padding: 20px 16px;
-        box-sizing: border-box;
-        flex-direction: column;
+        padding: 40px 108px;
+        gap: 40px;
+        flex-direction: row;
+
+        &-content {
+            flex: 2;
+            max-width: none;
+        }
 
         &-title {
-            font-size: 27px;
-            margin-bottom: 20px;
-            white-space: nowrap;
+            font-size: 36px;
+            margin-bottom: 30px;
         }
 
         &-subtitle {
-            font-size: 16px;
-            margin-top: 24px;
+            font-size: 20px;
+            margin: 40px 0 16px 0;
         }
 
         &-text {
-            font-size: 15px;
-            line-height: 1.5;
-            max-width: 100%;
-        }
+            font-size: 17px;
+            line-height: 1.33;
+            width: 50%;
 
-        &-content {
-            max-width: 100%;
-            flex: none;
-
-            > .services-text:first-of-type {
-                white-space: nowrap;
+            br {
+                display: block;
             }
         }
 
         &-list {
-            width: 100%;
-            margin-top: 1.5px;
+            width: auto;
+            margin-top: 0;
         }
 
         &-items {
-            font-size: 20px;
-            margin-top: 0;
-            flex-direction: column;
+            transform: translateX(-380px);
+            margin-top: -1px;
 
             li {
-                margin-bottom: 10px;
+                margin-bottom: 25px;
+
+                br {
+                    display: block;
+                }
             }
 
             a {
-                font-size: 16.5px;
+                font-size: 17px;
             }
 
             img {
-                width: 16px;
-                height: 16px;
-                margin-left: 8px;
+                width: 20px;
+                height: 20px;
+                margin-left: 10px;
             }
         }
-    }
-
-    .mobile-tech-break br {
-        display: none;
     }
 
     .projects {
-        padding: 20px 16px;
-        box-sizing: border-box;
+        padding: 40px 108px;
 
         &-title {
-            font-size: 27px;
+            font-size: 36px;
+            margin-bottom: 24px;
         }
 
         &-columns {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            margin-top: 24px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
         }
 
         &-item {
-            gap: 8px;
-            flex-direction: column;
-            align-items: flex-start;
+            gap: 16px;
 
             img {
-                width: 36px;
-                height: 36px;
+                width: 48px;
+                height: 48px;
             }
 
             p {
-                font-size: 12px;
+                font-size: 15px;
             }
         }
     }
 
     .footer {
-        margin-left: 16px;
-        margin-right: 16px;
-        padding: 16px;
-        box-sizing: border-box;
+        margin-left: 108px;  
+        margin-right: 108px; 
+        padding: $spacing-md;
 
-        &-logo {
-            font-size: 18px;
-            margin-bottom: 20px;
+        .container {
+            max-width: 1200px;
+            padding: 24px;
+        }
+    }
+
+    .footer-logo {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+        padding-left: 0;
+    }
+
+    .footer-item {
+        padding-left: 32px;
+    }
+
+    .footer-label {
+        font-size: 13px;
+        margin-bottom: 4px;
+    }
+
+    .footer-text {
+        font-size: 15px;
+        margin-top: 14px;
+    }
+
+    .footer-bottom {
+        gap: 12px;
+        margin-top: 8px;
+        margin-bottom: 0;
+
+        img {
+            width: 20px;
+            height: 20px;
         }
 
-        &-content {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px 16px;
-            margin-bottom: 24px;
-            padding-left: 24px;
-        }
-
-        &-item {
-            padding-left: 28px;
-
-            img {
-                width: 18px;
-                height: 18px;
-            }
-        }
-
-        &-label {
-            font-size: 12px;
-        }
-
-        &-text {
-            font-size: 13px;
-            margin-top: 8px;
-        }
-
-        &-bottom {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            margin-top: 20px;
-            margin-bottom: 14px;
-            flex-direction: row;
-
-            p {
-                font-size: 13px;
-                margin: 8px 0 0 0;
-            }
-
-            img {
-                width: 26px;
-                height: 26px;
-                position: relative;
-                top: 3px;
-            }
+        p {
+            font-size: 15px;
         }
     }
 }

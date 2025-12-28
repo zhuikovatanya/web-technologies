@@ -1,0 +1,91 @@
+.contact-form {
+    background-color: $primary-color;
+    padding: 60px 108px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    &-content {
+        flex: 1;
+    }
+
+    &-title {
+        font-size: 36px;
+        font-weight: 700;
+        color: $white;
+        margin: 0 0 16px 0;
+    }
+
+    &-text {
+        color: $white;
+        font-size: 15px;
+        line-height: 1.33;
+        margin: 0;
+    }
+
+    &-wrap {
+        background-color: $white;
+        padding: $spacing-md;
+        border-radius: 8px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 0 0 24px rgba(0, 0, 0, 0.16);
+        min-width: 500px;
+    }
+}
+
+.cnt-form {
+    display: flex;
+    flex-direction: column; 
+    gap: $spacing-sm;
+}
+
+.cnt-fields-row {
+    display: flex; 
+    gap: 20px;
+}
+
+.cnt-field {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cnt-label {
+    font-weight: 500;
+    font-size: 13px;
+    color: $text-light;
+    margin-bottom: 4px;
+}
+
+.cnt-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    img {
+        position: absolute;
+        left: 0;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.cnt-form input {
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid $border-color;
+
+    &[type="tel"] {
+        padding-left: 28px;
+    }
+}
+
+.cnt-button {
+    align-self: flex-end;
+    padding: 11px $spacing-md;
+    border: none;
+    background-color: $primary-color;
+    color: $white;
+    cursor: pointer;
+    border-radius: 8px;
+}

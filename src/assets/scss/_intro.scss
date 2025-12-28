@@ -3,7 +3,8 @@
     flex-direction: column;
     position: relative;
     overflow: hidden;
-    padding: 60px 0;
+    padding-top: 10px; 
+    padding-bottom: 60px;
     min-height: calc(100vh - 100px);
 
     .images {

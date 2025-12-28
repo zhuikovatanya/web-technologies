@@ -11,28 +11,30 @@
 
 <body>
     <header class="header">
-      <a class="logo blue-text" href="#">IT WEBSITE</a>
+      <div class="container">
+        <a class="logo blue-text" href="#">IT WEBSITE</a>
 
-      <nav class="nav">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="#">Services</a></li>
-          <li class="nav-item"><a href="#">Media</a></li>
-          <li class="nav-item"><a href="#">Cases</a></li>
-          <li class="nav-item"><a href="#">FAQ</a></li>
-          <li class="nav-item"><a href="#">Contacts</a></li>
-        </ul>
-      </nav>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item"><a href="#">Services</a></li>
+            <li class="nav-item"><a href="#">Media</a></li>
+            <li class="nav-item"><a href="#">Cases</a></li>
+            <li class="nav-item"><a href="#">FAQ</a></li>
+            <li class="nav-item"><a href="#">Contacts</a></li>
+          </ul>
+        </nav>
 
-      <div class="contacts">
-        <div class="contacts-phone">
-          <img class="contacts-icon" src="assets/icons/phone_icon.svg" alt="иконка телефона"/>
-          <p class="contacts-info blue-text">+7 (111) 111 11 11</p>
-          <p class="contacts-info blue-text">+7 (111) 111 11 11</p>
-        </div>
+        <div class="contacts">
+          <div class="contacts-phone">
+            <img class="contacts-icon" src="assets/icons/phone_icon.svg" alt="иконка телефона"/>
+            <p class="contacts-info blue-text">+7 (111) 111 11 11</p>
+            <p class="contacts-info blue-text">+7 (111) 111 11 11</p>
+          </div>
 
-        <div class="contacts-email">
-          <img class="contacts-icon" src="assets/icons/mail_icon.svg" alt="иконка почты"/>
-          <p class="contacts-info blue-text">itcompany@mail.com</p>
+          <div class="contacts-email">
+            <img class="contacts-icon" src="assets/icons/mail_icon.svg" alt="иконка почты"/>
+            <p class="contacts-info blue-text">itcompany@mail.com</p>
+          </div>
         </div>
       </div>
     </header>
@@ -57,7 +59,7 @@
 
     <div class="feedback-form">
         <h3 class="feedback-form-title">
-            Leave your contacts and we will call you back within 30 minutes
+            Leave your contacts and we will call you back <br> within 30 minutes
         </h3>
 
         <form class="form" action="" method="">
@@ -234,7 +236,8 @@
           people,<br />which gives more value.
         </p>
         <p class="iteka-text">
-          Business analysis / iOS / Android / QA / UI/UX Design
+          Business analysis <span class="blue-text">/</span> iOS <span class="blue-text">/</span> 
+          Android <span class="blue-text">/</span> QA <span class="blue-text">/</span> UI/UX Design
         </p>
 
         <div class="iteka-information">
@@ -278,21 +281,24 @@
       </div>
       <div class="contact-form-wrap">
         <form class="cnt-form" action="" method="">
-          <div class="cnt-field">
-            <label for="cnt-phone" class="cnt-label">Best phone number</label>
-            <div class="cnt-input-wrap">
-              <img src="assets/icons/флаг.png" alt="флаг"/>
-              <input type="tel" id="cnt-phone" name="phone" placeholder="+7 (111) 111-11-11" required/>
+          <div class="cnt-fields-row">
+            <div class="cnt-field">
+              <label for="cnt-phone" class="cnt-label">Best phone number</label>
+              <div class="cnt-input-wrap">
+                <img src="assets/icons/флаг.png" alt="флаг"/>
+                <input type="tel" id="cnt-phone" name="phone" placeholder="+7 (702) 517-11-98" required/>
+              </div>
             </div>
-          </div>
 
           <div class="cnt-field">
             <label for="cnt-name" class="cnt-label">Full name</label>
             <input type="text" id="cnt-name" name="name" placeholder="Иван Иванов" required/>
           </div>
+      </div>
 
-          <button type="submit" class="cnt-button">Discuss the project</button>
-        </form>
+      <button type="submit" class="cnt-button">Discuss the project</button>
+    </form>
+
       </div>
     </div>
 
@@ -411,7 +417,7 @@
         <form class="book-form" action="" method="">
           <div class="book-field">
             <label for="book-phone" class="book-label">Phone number</label>
-            <div class="ebook-input-wrap">
+            <div class="book-input-wrap">
               <img src="assets/icons/флаг.png" alt="Flag"/>
               <input type="tel" id="book-phone" name="phone" placeholder="+7 (111) 111-11-11" required/>
             </div>
@@ -426,7 +432,7 @@
             <input type="email" id="book-email" name="email" placeholder="mail@mail.com" required/>
           </div>
 
-          <button type="submit" class="book-button">Send my ebook to my mail</button>
+          <button type="submit" class="book-button">Send mе ebook to my mail</button>
         </form>
       </div>
 
