@@ -239,7 +239,12 @@ const snake = {
   /**
    * Двигает змейку на один шаг.
    */
-  makeStep() {},
+  makeStep() {
+    const nextStepHeadPoint = this.getNextStepHeadPoint();
+    this.body.unshift(nextStepHeadPoint);
+    this.body.pop();
+    this.lastStepDirection = this.direction;
+  },
 
   /**
    * Добавляет в конец тела змейки копию последнего элемента змейки.
@@ -331,7 +336,9 @@ const food = {
    * @param {{x: int, y: int}} point Точка, для проверки соответствия точке еды.
    * @returns {boolean} true, если точки совпали, иначе false.
    */
-  isOnPoint(point) {},
+  isOnPoint(point) {
+    return this.x === point.x && this.y === point.y;
+  },
 };
 
 /**
@@ -557,7 +564,17 @@ const game = {
    * Отдает случайную не занятую точку на карте.
    * @return {{x: int, y: int}} Точку с координатами.
    */
-  getRandomFreeCoordinates() {},
+  getRandomFreeCoordinates() {
+    let newPoint;
+    do {
+      newPoint = {
+        x: Math.floor(Math.random() * this.config.getColsCount()),
+         y: Math.floor(Math.random() * this.config.getRowsCount())
+      };
+    } while (this.snake.isOnPoint(newPoint));
+  
+    return newPoint;
+  },
 
   /**
    * Обработчик события нажатия на кнопку playButton.
@@ -625,19 +642,40 @@ const game = {
    * @param {string} direction Направление, которое проверяем.
    * @returns {boolean} true, если направление можно назначить змейке, иначе false.
    */
-  canSetDirection(direction) {},
+  canSetDirection(direction) {
+    const lastDirection = this.snake.getLastStepDirection();
+  
+    if (lastDirection === 'up' && direction === 'down') return false;
+    if (lastDirection === 'down' && direction === 'up') return false;
+    if (lastDirection === 'left' && direction === 'right') return false;
+    if (lastDirection === 'right' && direction === 'left') return false;
+  
+    return true;
+  },
 
   /**
    * Проверяем произошла ли победа, судим по очкам игрока (длине змейки).
    * @returns {boolean} true, если игрок выиграл игру, иначе false.
    */
-  isGameWon() {},
+  isGameWon() {
+    return this.snake.getBody().length - 1 >= this.config.getWinFoodCount();
+  },
 
   /**
    * Проверяет возможен ли следующий шаг.
    * @returns {boolean} true если следующий шаг змейки возможен, false если шаг не может быть совершен.
    */
-  canMakeStep() {},
+  canMakeStep() {
+    const nextHeadPoint = this.snake.getNextStepHeadPoint();
+
+    for (let i = 0; i < this.snake.body.length - 1; i++) {
+      if (this.snake.body[i].x === nextHeadPoint.x && 
+          this.snake.body[i].y === nextHeadPoint.y) {
+        return false;
+    }
+  }  
+    return true;
+  },
 };
 
 // При загрузке страницы инициализируем игру.
